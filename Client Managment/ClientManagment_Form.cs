@@ -13,34 +13,53 @@ namespace Client_Managment
 {
     public partial class ClientManagment_Form : Form
     {
+        //Client client = new Client();
+        Connect con = new Connect();
+        Client client = new Client();
+
         public ClientManagment_Form()
         {
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ClientManagment_Form_Load(object sender, EventArgs e)
         {
-            company_comboBox.SelectedIndex = 1;
+            comboBox_Company.SelectedIndex = 0;
+        }
+
+        private void clear_Button_Click(object sender, EventArgs e)
+        {
+            textBox_Name.Clear();
+            textBox_Surename.Clear();
+            textBox_Location.Clear();
         }
 
         private void add_Button_Click(object sender, EventArgs e)
         {
-            Connect con = new Connect();
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand();
-            String query = "select * from client.client_info where ClientName = 'Όνομα' and ClientSurename = 'Επίθετο' and ClientLocation = 'Τοποθεσία' and Business = 'Επιχείρηση'";
+            String name = textBox_Name.Text;
+            String surename = textBox_Surename.Text;
+            String location = textBox_Location.Text;
+            String business = comboBox_Company.SelectedText;
 
-            command.CommandText = query;
-            command.Connection = con.GetMySqlConnection();
+            Boolean insertClient = client.insertClient("", "", "", "");
 
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
+            if (name.Trim().Equals("") || surename.Trim().Equals("") || location.Trim().Equals(""))
+            {
+                MessageBox.Show("Όλα τα στοιχεία του πελάτη είναι απαιτούμενα!", "Κενά Στοιχεία", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (insertClient)
+                {
+                    MessageBox.Show("Ο πελάτης προστέθηκε επιτυχώς!", "Προσθήκη Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Σφάλμα - Ο πελάτης δεν προστέθηκε!", "Προσθήκη Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
+
+           
     }
 }

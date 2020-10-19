@@ -28,279 +28,249 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_ClientManagmet = new System.Windows.Forms.Label();
+            this.label_Client = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.name_Label = new System.Windows.Forms.Label();
-            this.surename_Label = new System.Windows.Forms.Label();
-            this.location_Label = new System.Windows.Forms.Label();
-            this.company_Label = new System.Windows.Forms.Label();
-            this.name_textBox = new System.Windows.Forms.TextBox();
-            this.surename_textBox = new System.Windows.Forms.TextBox();
-            this.location_textBox = new System.Windows.Forms.TextBox();
+            this.label_Name = new System.Windows.Forms.Label();
+            this.label_Surename = new System.Windows.Forms.Label();
+            this.label_Location = new System.Windows.Forms.Label();
+            this.label_Company = new System.Windows.Forms.Label();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.textBox_Surename = new System.Windows.Forms.TextBox();
+            this.textBox_Location = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.clear_Button = new System.Windows.Forms.Button();
-            this.add_Button = new System.Windows.Forms.Button();
-            this.company_comboBox = new System.Windows.Forms.ComboBox();
-            this.ClientList_DataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_Clear = new System.Windows.Forms.Button();
+            this.button_Add = new System.Windows.Forms.Button();
+            this.comboBox_Company = new System.Windows.Forms.ComboBox();
+            this.DataGridView_ClientList = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.update_Button = new System.Windows.Forms.Button();
-            this.exit_Button = new System.Windows.Forms.Button();
-            this.delete_Button = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.search_Label = new System.Windows.Forms.Label();
+            this.button_Update = new System.Windows.Forms.Button();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.button_Delete = new System.Windows.Forms.Button();
+            this.textBox_Search = new System.Windows.Forms.TextBox();
+            this.label_Search = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientList_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_ClientList)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // label_ClientManagmet
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(438, 60);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Διαχείρηση Πελατών";
+            this.label_ClientManagmet.AutoSize = true;
+            this.label_ClientManagmet.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ClientManagmet.Location = new System.Drawing.Point(14, 16);
+            this.label_ClientManagmet.Name = "label_ClientManagmet";
+            this.label_ClientManagmet.Size = new System.Drawing.Size(438, 60);
+            this.label_ClientManagmet.TabIndex = 0;
+            this.label_ClientManagmet.Text = "Διαχείρηση Πελατών";
             // 
-            // label2
+            // label_Client
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Πελάτης";
+            this.label_Client.AutoSize = true;
+            this.label_Client.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Client.Location = new System.Drawing.Point(3, 41);
+            this.label_Client.Name = "label_Client";
+            this.label_Client.Size = new System.Drawing.Size(81, 25);
+            this.label_Client.TabIndex = 1;
+            this.label_Client.Text = "Πελάτης";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_ClientManagmet);
             this.panel1.Location = new System.Drawing.Point(-6, -7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(842, 104);
             this.panel1.TabIndex = 2;
             // 
-            // name_Label
+            // label_Name
             // 
-            this.name_Label.AutoSize = true;
-            this.name_Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_Label.Location = new System.Drawing.Point(39, 105);
-            this.name_Label.Name = "name_Label";
-            this.name_Label.Size = new System.Drawing.Size(58, 18);
-            this.name_Label.TabIndex = 3;
-            this.name_Label.Text = "Όνομα:";
+            this.label_Name.AutoSize = true;
+            this.label_Name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Name.Location = new System.Drawing.Point(39, 105);
+            this.label_Name.Name = "label_Name";
+            this.label_Name.Size = new System.Drawing.Size(58, 18);
+            this.label_Name.TabIndex = 3;
+            this.label_Name.Text = "Όνομα:";
             // 
-            // surename_Label
+            // label_Surename
             // 
-            this.surename_Label.AutoSize = true;
-            this.surename_Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surename_Label.Location = new System.Drawing.Point(28, 137);
-            this.surename_Label.Name = "surename_Label";
-            this.surename_Label.Size = new System.Drawing.Size(67, 18);
-            this.surename_Label.TabIndex = 4;
-            this.surename_Label.Text = "Επίθετο:";
+            this.label_Surename.AutoSize = true;
+            this.label_Surename.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Surename.Location = new System.Drawing.Point(28, 137);
+            this.label_Surename.Name = "label_Surename";
+            this.label_Surename.Size = new System.Drawing.Size(67, 18);
+            this.label_Surename.TabIndex = 4;
+            this.label_Surename.Text = "Επίθετο:";
             // 
-            // location_Label
+            // label_Location
             // 
-            this.location_Label.AutoSize = true;
-            this.location_Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.location_Label.Location = new System.Drawing.Point(11, 169);
-            this.location_Label.Name = "location_Label";
-            this.location_Label.Size = new System.Drawing.Size(86, 18);
-            this.location_Label.TabIndex = 5;
-            this.location_Label.Text = "Τοποθεσία:";
+            this.label_Location.AutoSize = true;
+            this.label_Location.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Location.Location = new System.Drawing.Point(11, 169);
+            this.label_Location.Name = "label_Location";
+            this.label_Location.Size = new System.Drawing.Size(86, 18);
+            this.label_Location.TabIndex = 5;
+            this.label_Location.Text = "Τοποθεσία:";
             // 
-            // company_Label
+            // label_Company
             // 
-            this.company_Label.AutoSize = true;
-            this.company_Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.company_Label.Location = new System.Drawing.Point(5, 201);
-            this.company_Label.Name = "company_Label";
-            this.company_Label.Size = new System.Drawing.Size(90, 18);
-            this.company_Label.TabIndex = 6;
-            this.company_Label.Text = "Επιχείρηση:";
+            this.label_Company.AutoSize = true;
+            this.label_Company.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Company.Location = new System.Drawing.Point(5, 201);
+            this.label_Company.Name = "label_Company";
+            this.label_Company.Size = new System.Drawing.Size(90, 18);
+            this.label_Company.TabIndex = 6;
+            this.label_Company.Text = "Επιχείρηση:";
             // 
-            // name_textBox
+            // textBox_Name
             // 
-            this.name_textBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_textBox.Location = new System.Drawing.Point(100, 102);
-            this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(193, 26);
-            this.name_textBox.TabIndex = 7;
+            this.textBox_Name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Name.Location = new System.Drawing.Point(100, 102);
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.Size = new System.Drawing.Size(193, 26);
+            this.textBox_Name.TabIndex = 7;
             // 
-            // surename_textBox
+            // textBox_Surename
             // 
-            this.surename_textBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.surename_textBox.Location = new System.Drawing.Point(99, 134);
-            this.surename_textBox.Name = "surename_textBox";
-            this.surename_textBox.Size = new System.Drawing.Size(193, 26);
-            this.surename_textBox.TabIndex = 8;
+            this.textBox_Surename.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Surename.Location = new System.Drawing.Point(99, 134);
+            this.textBox_Surename.Name = "textBox_Surename";
+            this.textBox_Surename.Size = new System.Drawing.Size(193, 26);
+            this.textBox_Surename.TabIndex = 8;
             // 
-            // location_textBox
+            // textBox_Location
             // 
-            this.location_textBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.location_textBox.Location = new System.Drawing.Point(99, 166);
-            this.location_textBox.Name = "location_textBox";
-            this.location_textBox.Size = new System.Drawing.Size(193, 26);
-            this.location_textBox.TabIndex = 9;
+            this.textBox_Location.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Location.Location = new System.Drawing.Point(99, 166);
+            this.textBox_Location.Name = "textBox_Location";
+            this.textBox_Location.Size = new System.Drawing.Size(193, 26);
+            this.textBox_Location.TabIndex = 9;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.clear_Button);
-            this.panel2.Controls.Add(this.add_Button);
-            this.panel2.Controls.Add(this.company_comboBox);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.company_Label);
-            this.panel2.Controls.Add(this.location_textBox);
-            this.panel2.Controls.Add(this.location_Label);
-            this.panel2.Controls.Add(this.name_Label);
-            this.panel2.Controls.Add(this.surename_Label);
-            this.panel2.Controls.Add(this.surename_textBox);
-            this.panel2.Controls.Add(this.name_textBox);
+            this.panel2.Controls.Add(this.button_Clear);
+            this.panel2.Controls.Add(this.button_Add);
+            this.panel2.Controls.Add(this.comboBox_Company);
+            this.panel2.Controls.Add(this.label_Client);
+            this.panel2.Controls.Add(this.label_Company);
+            this.panel2.Controls.Add(this.textBox_Location);
+            this.panel2.Controls.Add(this.label_Location);
+            this.panel2.Controls.Add(this.label_Name);
+            this.panel2.Controls.Add(this.label_Surename);
+            this.panel2.Controls.Add(this.textBox_Surename);
+            this.panel2.Controls.Add(this.textBox_Name);
             this.panel2.Location = new System.Drawing.Point(3, 103);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(333, 331);
             this.panel2.TabIndex = 10;
             // 
-            // clear_Button
+            // button_Clear
             // 
-            this.clear_Button.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_Button.Location = new System.Drawing.Point(3, 287);
-            this.clear_Button.Name = "clear_Button";
-            this.clear_Button.Size = new System.Drawing.Size(144, 42);
-            this.clear_Button.TabIndex = 12;
-            this.clear_Button.Text = "Εκκαθάρηση Στοιχείων";
-            this.clear_Button.UseVisualStyleBackColor = true;
+            this.button_Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Clear.Location = new System.Drawing.Point(3, 287);
+            this.button_Clear.Name = "button_Clear";
+            this.button_Clear.Size = new System.Drawing.Size(144, 42);
+            this.button_Clear.TabIndex = 12;
+            this.button_Clear.Text = "Εκκαθάρηση Στοιχείων";
+            this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.Click += new System.EventHandler(this.clear_Button_Click);
             // 
-            // add_Button
+            // button_Add
             // 
-            this.add_Button.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_Button.Location = new System.Drawing.Point(186, 287);
-            this.add_Button.Name = "add_Button";
-            this.add_Button.Size = new System.Drawing.Size(144, 42);
-            this.add_Button.TabIndex = 11;
-            this.add_Button.Text = "Προσθήκη";
-            this.add_Button.UseVisualStyleBackColor = true;
-            this.add_Button.Click += new System.EventHandler(this.add_Button_Click);
+            this.button_Add.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Add.Location = new System.Drawing.Point(186, 287);
+            this.button_Add.Name = "button_Add";
+            this.button_Add.Size = new System.Drawing.Size(144, 42);
+            this.button_Add.TabIndex = 11;
+            this.button_Add.Text = "Προσθήκη";
+            this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.add_Button_Click);
             // 
-            // company_comboBox
+            // comboBox_Company
             // 
-            this.company_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.company_comboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.company_comboBox.FormattingEnabled = true;
-            this.company_comboBox.Items.AddRange(new object[] {
-            "",
+            this.comboBox_Company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Company.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Company.FormattingEnabled = true;
+            this.comboBox_Company.Items.AddRange(new object[] {
             "Σούπερ Μάρκετ",
             "Μίνι Μάρκετ",
             "Περίπτερο"});
-            this.company_comboBox.Location = new System.Drawing.Point(98, 198);
-            this.company_comboBox.Name = "company_comboBox";
-            this.company_comboBox.Size = new System.Drawing.Size(194, 26);
-            this.company_comboBox.TabIndex = 10;
-            this.company_comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox_Company.Location = new System.Drawing.Point(98, 198);
+            this.comboBox_Company.Name = "comboBox_Company";
+            this.comboBox_Company.Size = new System.Drawing.Size(194, 26);
+            this.comboBox_Company.TabIndex = 10;
             // 
-            // ClientList_DataGridView
+            // DataGridView_ClientList
             // 
-            this.ClientList_DataGridView.AllowUserToAddRows = false;
-            this.ClientList_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClientList_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.ClientList_DataGridView.Location = new System.Drawing.Point(2, 44);
-            this.ClientList_DataGridView.Name = "ClientList_DataGridView";
-            this.ClientList_DataGridView.Size = new System.Drawing.Size(444, 404);
-            this.ClientList_DataGridView.TabIndex = 11;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Όνομα";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Επίθετο";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Τοποθεσία";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Επιχείρηση";
-            this.Column4.Name = "Column4";
+            this.DataGridView_ClientList.AllowUserToAddRows = false;
+            this.DataGridView_ClientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_ClientList.Location = new System.Drawing.Point(2, 44);
+            this.DataGridView_ClientList.Name = "DataGridView_ClientList";
+            this.DataGridView_ClientList.Size = new System.Drawing.Size(444, 404);
+            this.DataGridView_ClientList.TabIndex = 11;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.update_Button);
-            this.panel3.Controls.Add(this.exit_Button);
-            this.panel3.Controls.Add(this.delete_Button);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.search_Label);
-            this.panel3.Controls.Add(this.ClientList_DataGridView);
+            this.panel3.Controls.Add(this.button_Update);
+            this.panel3.Controls.Add(this.button_Exit);
+            this.panel3.Controls.Add(this.button_Delete);
+            this.panel3.Controls.Add(this.textBox_Search);
+            this.panel3.Controls.Add(this.label_Search);
+            this.panel3.Controls.Add(this.DataGridView_ClientList);
             this.panel3.Location = new System.Drawing.Point(340, 103);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(451, 496);
             this.panel3.TabIndex = 12;
             // 
-            // update_Button
+            // button_Update
             // 
-            this.update_Button.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_Button.Location = new System.Drawing.Point(153, 451);
-            this.update_Button.Name = "update_Button";
-            this.update_Button.Size = new System.Drawing.Size(144, 42);
-            this.update_Button.TabIndex = 16;
-            this.update_Button.Text = "Ανανέωση";
-            this.update_Button.UseVisualStyleBackColor = true;
+            this.button_Update.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Update.Location = new System.Drawing.Point(153, 451);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Size = new System.Drawing.Size(144, 42);
+            this.button_Update.TabIndex = 16;
+            this.button_Update.Text = "Ανανέωση";
+            this.button_Update.UseVisualStyleBackColor = true;
             // 
-            // exit_Button
+            // button_Exit
             // 
-            this.exit_Button.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit_Button.Location = new System.Drawing.Point(303, 451);
-            this.exit_Button.Name = "exit_Button";
-            this.exit_Button.Size = new System.Drawing.Size(144, 42);
-            this.exit_Button.TabIndex = 15;
-            this.exit_Button.Text = "Έξοδος";
-            this.exit_Button.UseVisualStyleBackColor = true;
+            this.button_Exit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Exit.Location = new System.Drawing.Point(303, 451);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(144, 42);
+            this.button_Exit.TabIndex = 15;
+            this.button_Exit.Text = "Έξοδος";
+            this.button_Exit.UseVisualStyleBackColor = true;
             // 
-            // delete_Button
+            // button_Delete
             // 
-            this.delete_Button.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_Button.Location = new System.Drawing.Point(3, 451);
-            this.delete_Button.Name = "delete_Button";
-            this.delete_Button.Size = new System.Drawing.Size(144, 42);
-            this.delete_Button.TabIndex = 14;
-            this.delete_Button.Text = "Διαγραφή";
-            this.delete_Button.UseVisualStyleBackColor = true;
+            this.button_Delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Delete.Location = new System.Drawing.Point(3, 451);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.Size = new System.Drawing.Size(144, 42);
+            this.button_Delete.TabIndex = 14;
+            this.button_Delete.Text = "Διαγραφή";
+            this.button_Delete.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBox_Search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(94, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(353, 26);
-            this.textBox1.TabIndex = 13;
+            this.textBox_Search.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Search.Location = new System.Drawing.Point(94, 12);
+            this.textBox_Search.Name = "textBox_Search";
+            this.textBox_Search.Size = new System.Drawing.Size(353, 26);
+            this.textBox_Search.TabIndex = 13;
             // 
-            // search_Label
+            // label_Search
             // 
-            this.search_Label.AutoSize = true;
-            this.search_Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_Label.Location = new System.Drawing.Point(3, 15);
-            this.search_Label.Name = "search_Label";
-            this.search_Label.Size = new System.Drawing.Size(85, 18);
-            this.search_Label.TabIndex = 12;
-            this.search_Label.Text = "Αναζήτηση:";
+            this.label_Search.AutoSize = true;
+            this.label_Search.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Search.Location = new System.Drawing.Point(3, 15);
+            this.label_Search.Name = "label_Search";
+            this.label_Search.Size = new System.Drawing.Size(85, 18);
+            this.label_Search.TabIndex = 12;
+            this.label_Search.Text = "Αναζήτηση:";
             // 
             // ClientManagment_Form
             // 
@@ -316,7 +286,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientList_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_ClientList)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -325,31 +295,27 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_ClientManagmet;
+        private System.Windows.Forms.Label label_Client;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label name_Label;
-        private System.Windows.Forms.Label surename_Label;
-        private System.Windows.Forms.Label location_Label;
-        private System.Windows.Forms.Label company_Label;
-        private System.Windows.Forms.TextBox name_textBox;
-        private System.Windows.Forms.TextBox surename_textBox;
-        private System.Windows.Forms.TextBox location_textBox;
+        private System.Windows.Forms.Label label_Name;
+        private System.Windows.Forms.Label label_Surename;
+        private System.Windows.Forms.Label label_Location;
+        private System.Windows.Forms.Label label_Company;
+        private System.Windows.Forms.TextBox textBox_Name;
+        private System.Windows.Forms.TextBox textBox_Surename;
+        private System.Windows.Forms.TextBox textBox_Location;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox company_comboBox;
-        private System.Windows.Forms.Button clear_Button;
-        private System.Windows.Forms.Button add_Button;
-        private System.Windows.Forms.DataGridView ClientList_DataGridView;
+        private System.Windows.Forms.ComboBox comboBox_Company;
+        private System.Windows.Forms.Button button_Clear;
+        private System.Windows.Forms.Button button_Add;
+        private System.Windows.Forms.DataGridView DataGridView_ClientList;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button update_Button;
-        private System.Windows.Forms.Button exit_Button;
-        private System.Windows.Forms.Button delete_Button;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label search_Label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button button_Update;
+        private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Button button_Delete;
+        private System.Windows.Forms.TextBox textBox_Search;
+        private System.Windows.Forms.Label label_Search;
     }
 }
 
