@@ -25,6 +25,7 @@ namespace Client_Managment
         private void ClientManagment_Form_Load(object sender, EventArgs e)
         {
             comboBox_Company.SelectedIndex = 0;
+            DataGridView_ClientList.DataSource = client.getClients();
         }
 
         private void clear_Button_Click(object sender, EventArgs e)

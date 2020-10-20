@@ -43,5 +43,17 @@ namespace Client_Managment
                 return false;
             }           
         }
+
+        //Get Clients
+        public DataTable getClients()
+        {
+            MySqlCommand command = new MySqlCommand("select * from client_info", con.GetMySqlConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            return table;
+        }
     }
 }
