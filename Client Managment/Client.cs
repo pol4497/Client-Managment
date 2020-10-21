@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 
 namespace Client_Managment
@@ -54,6 +55,33 @@ namespace Client_Managment
             adapter.SelectCommand = command;
             adapter.Fill(table);
             return table;
+        }
+
+        //Edit Client
+        public bool editClient(String name, String surename, String location, String business)
+        {
+            MySqlCommand command = new MySqlCommand();
+            String editQuery = "update client_info set ClientName=@name, ClientSurename=@surename, ClientLocation=@location, Business=@business";
+            command.CommandText = editQuery;
+            command.Connection = con.GetMySqlConnection();
+
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+            command.Parameters.Add("@surename", MySqlDbType.VarChar).Value = surename;
+            command.Parameters.Add("@location", MySqlDbType.VarChar).Value = location;
+            command.Parameters.Add("@business", MySqlDbType.VarChar).Value = business;
+
+            con.OpenMySqlConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                con.CloseMySqlConnection();
+                return true;
+            }
+            else
+            {
+                con.OpenMySqlConnection();
+                return false;
+            }
         }
     }
 }

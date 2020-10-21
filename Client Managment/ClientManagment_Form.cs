@@ -13,8 +13,7 @@ namespace Client_Managment
 {
     public partial class ClientManagment_Form : Form
     {
-        //Client client = new Client();
-        Connect con = new Connect();
+
         Client client = new Client();
 
         public ClientManagment_Form()
@@ -35,14 +34,13 @@ namespace Client_Managment
             textBox_Location.Clear();
         }
 
+        //Add a Client
         private void add_Button_Click(object sender, EventArgs e)
         {
             String name = textBox_Name.Text;
             String surename = textBox_Surename.Text;
             String location = textBox_Location.Text;
-            String business = comboBox_Company.SelectedText;
-
-            Boolean insertClient = client.insertClient("", "", "", "");
+            String business = comboBox_Company.Text;
 
             if (name.Trim().Equals("") || surename.Trim().Equals("") || location.Trim().Equals(""))
             {
@@ -50,17 +48,55 @@ namespace Client_Managment
             }
             else
             {
+                Boolean insertClient = client.insertClient(name, surename, location, business);
+
                 if (insertClient)
                 {
+                    DataGridView_ClientList.DataSource = client.getClients();
                     MessageBox.Show("Ο πελάτης προστέθηκε επιτυχώς!", "Προσθήκη Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Σφάλμα - Ο πελάτης δεν προστέθηκε!", "Προσθήκη Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Σφάλμα - Ο πελάτης δεν προστέθηκε!", "Προσθήκη Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-           
+        //Update a Client
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            String name = textBox_Name.Text;
+            String surename = textBox_Surename.Text;
+            String location = textBox_Location.Text;
+            String business = comboBox_Company.Text;
+
+            if (name.Trim().Equals("") || surename.Trim().Equals("") || location.Trim().Equals(""))
+            {
+                MessageBox.Show("Κάποια στοιχεία είναι άδεια!", "Κενά Στοιχεία", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Boolean editClient = client.editClient(name, surename, location, business);
+
+                if (editClient)
+                {
+                    DataGridView_ClientList.DataSource = client.getClients();
+                    MessageBox.Show("Ο πελάτης ανανεώθηκε επιτυχώς!", "Ανανέωση Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Σφάλμα - Ο πελάτης δεν ανανεώθηκε!", "Ανανέωση Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        //Display Selected Row to the text boxes.
+        private void DataGridView_ClientList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox_Name.Text = DataGridView_ClientList.CurrentRow.Cells[0].Value.ToString();
+            textBox_Surename.Text = DataGridView_ClientList.CurrentRow.Cells[1].Value.ToString();
+            textBox_Location.Text = DataGridView_ClientList.CurrentRow.Cells[2].Value.ToString();
+            comboBox_Company.Text = DataGridView_ClientList.CurrentRow.Cells[3].Value.ToString();
+        }
     }
 }

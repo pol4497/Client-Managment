@@ -39,12 +39,12 @@
             this.textBox_Surename = new System.Windows.Forms.TextBox();
             this.textBox_Location = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button_Clear = new System.Windows.Forms.Button();
+            this.button_Update = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.comboBox_Company = new System.Windows.Forms.ComboBox();
+            this.button_Clear = new System.Windows.Forms.Button();
             this.DataGridView_ClientList = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button_Update = new System.Windows.Forms.Button();
             this.button_Exit = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.textBox_Search = new System.Windows.Forms.TextBox();
@@ -150,7 +150,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button_Clear);
+            this.panel2.Controls.Add(this.button_Update);
             this.panel2.Controls.Add(this.button_Add);
             this.panel2.Controls.Add(this.comboBox_Company);
             this.panel2.Controls.Add(this.label_Client);
@@ -163,26 +163,26 @@
             this.panel2.Controls.Add(this.textBox_Name);
             this.panel2.Location = new System.Drawing.Point(3, 103);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(333, 331);
+            this.panel2.Size = new System.Drawing.Size(333, 377);
             this.panel2.TabIndex = 10;
             // 
-            // button_Clear
+            // button_Update
             // 
-            this.button_Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Clear.Location = new System.Drawing.Point(3, 287);
-            this.button_Clear.Name = "button_Clear";
-            this.button_Clear.Size = new System.Drawing.Size(144, 42);
-            this.button_Clear.TabIndex = 12;
-            this.button_Clear.Text = "Εκκαθάρηση Στοιχείων";
-            this.button_Clear.UseVisualStyleBackColor = true;
-            this.button_Clear.Click += new System.EventHandler(this.clear_Button_Click);
+            this.button_Update.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Update.Location = new System.Drawing.Point(3, 287);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Size = new System.Drawing.Size(158, 42);
+            this.button_Update.TabIndex = 16;
+            this.button_Update.Text = "Ανανέωση";
+            this.button_Update.UseVisualStyleBackColor = true;
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
             // button_Add
             // 
             this.button_Add.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Add.Location = new System.Drawing.Point(186, 287);
+            this.button_Add.Location = new System.Drawing.Point(172, 287);
             this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(144, 42);
+            this.button_Add.Size = new System.Drawing.Size(158, 42);
             this.button_Add.TabIndex = 11;
             this.button_Add.Text = "Προσθήκη";
             this.button_Add.UseVisualStyleBackColor = true;
@@ -202,18 +202,28 @@
             this.comboBox_Company.Size = new System.Drawing.Size(194, 26);
             this.comboBox_Company.TabIndex = 10;
             // 
+            // button_Clear
+            // 
+            this.button_Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Clear.Location = new System.Drawing.Point(6, 438);
+            this.button_Clear.Name = "button_Clear";
+            this.button_Clear.Size = new System.Drawing.Size(327, 42);
+            this.button_Clear.TabIndex = 12;
+            this.button_Clear.Text = "Εκκαθάρηση Στοιχείων";
+            this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.Click += new System.EventHandler(this.clear_Button_Click);
+            // 
             // DataGridView_ClientList
             // 
-            this.DataGridView_ClientList.AllowUserToAddRows = false;
             this.DataGridView_ClientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_ClientList.Location = new System.Drawing.Point(2, 44);
             this.DataGridView_ClientList.Name = "DataGridView_ClientList";
             this.DataGridView_ClientList.Size = new System.Drawing.Size(444, 404);
             this.DataGridView_ClientList.TabIndex = 11;
+            this.DataGridView_ClientList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_ClientList_CellClick);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button_Update);
             this.panel3.Controls.Add(this.button_Exit);
             this.panel3.Controls.Add(this.button_Delete);
             this.panel3.Controls.Add(this.textBox_Search);
@@ -223,16 +233,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(451, 496);
             this.panel3.TabIndex = 12;
-            // 
-            // button_Update
-            // 
-            this.button_Update.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Update.Location = new System.Drawing.Point(153, 451);
-            this.button_Update.Name = "button_Update";
-            this.button_Update.Size = new System.Drawing.Size(144, 42);
-            this.button_Update.TabIndex = 16;
-            this.button_Update.Text = "Ανανέωση";
-            this.button_Update.UseVisualStyleBackColor = true;
             // 
             // button_Exit
             // 
@@ -277,6 +277,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 619);
+            this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
