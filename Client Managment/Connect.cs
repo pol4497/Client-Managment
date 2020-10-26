@@ -10,7 +10,7 @@ namespace Client_Managment
 {
     class Connect
     {
-        private MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=client;password=theodoros1997");
+        private MySqlConnection connection = new MySqlConnection("server=localhost;user id=root;database=client;password=theodoros1997");        
         
         //This function returns connection
         public MySqlConnection GetMySqlConnection()

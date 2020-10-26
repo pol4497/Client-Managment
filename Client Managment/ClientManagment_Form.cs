@@ -14,7 +14,8 @@ namespace Client_Managment
     public partial class ClientManagment_Form : Form
     {
 
-        Client client = new Client();
+        //Client client = new Client();
+        Connect connect = new Connect();
 
         public ClientManagment_Form()
         {
@@ -24,79 +25,161 @@ namespace Client_Managment
         private void ClientManagment_Form_Load(object sender, EventArgs e)
         {
             comboBox_Company.SelectedIndex = 0;
-            DataGridView_ClientList.DataSource = client.getClients();
+            LoadData();
         }
 
         private void clear_Button_Click(object sender, EventArgs e)
         {
             textBox_Name.Clear();
             textBox_Surename.Clear();
-            textBox_Location.Clear();
+            textBox_Location.Clear();           
         }
 
-        //Add a Client
+        //Add Client Function
         private void add_Button_Click(object sender, EventArgs e)
         {
-            String name = textBox_Name.Text;
-            String surename = textBox_Surename.Text;
-            String location = textBox_Location.Text;
-            String business = comboBox_Company.Text;
+            string name = textBox_Name.Text;
+            string surename = textBox_Surename.Text;
+            string location = textBox_Location.Text;
+            string business = comboBox_Company.Text;
 
-            if (name.Trim().Equals("") || surename.Trim().Equals("") || location.Trim().Equals(""))
+            try
             {
-                MessageBox.Show("Όλα τα στοιχεία του πελάτη είναι απαιτούμενα!", "Κενά Στοιχεία", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                Boolean insertClient = client.insertClient(name, surename, location, business);
+                connect.OpenMySqlConnection();
 
-                if (insertClient)
+                string insertQuery = @"insert into client.client_info(ClientName, ClientSurename, ClientLocation, Business) " +
+                                                              "values('" + name + "', '" + surename + "', '" + location + "', '" + business + "')";
+
+                MySqlCommand command = new MySqlCommand(insertQuery, connect.GetMySqlConnection());
+                command.ExecuteNonQuery();
+
+                connect.CloseMySqlConnection();
+
+                if (name.Trim().Equals("") || surename.Trim().Equals("") || location.Trim().Equals(""))
                 {
-                    DataGridView_ClientList.DataSource = client.getClients();
+                    MessageBox.Show("Όλα τα στοιχεία του πελάτη είναι απαιτούμενα!", "Κενά Στοιχεία", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {                   
                     MessageBox.Show("Ο πελάτης προστέθηκε επιτυχώς!", "Προσθήκη Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                    textBox_Name.Clear();
+                    textBox_Surename.Clear();
+                    textBox_Location.Clear();
+                }                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }           
+        }
+
+        //Update Client Function
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            string name = textBox_Name.Text;
+            string surename = textBox_Surename.Text;
+            string location = textBox_Location.Text;
+            string business = comboBox_Company.Text;
+
+            try
+            {
+                connect.OpenMySqlConnection();
+
+                string editQuery = @"update client.client_info set ClientName='" + name + "', ClientSurename='" + surename + "', " +
+                                    "ClientLocation='" + location + "', Business='" + business + "' where ClientName='" + name + "'";
+                MySqlCommand command = new MySqlCommand(editQuery, connect.GetMySqlConnection());
+                command.ExecuteNonQuery();
+
+                connect.CloseMySqlConnection();
+
+                if (name.Trim().Equals("") || surename.Trim().Equals("") || location.Trim().Equals(""))
+                {
+                    MessageBox.Show("Όλα τα στοιχεία του πελάτη είναι απαιτούμενα!", "Κενά Στοιχεία", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Σφάλμα - Ο πελάτης δεν προστέθηκε!", "Προσθήκη Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ο πελάτης ανανεώθηκε επιτυχώς!", "Ανανέωση Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                    textBox_Name.Clear();
+                    textBox_Surename.Clear();
+                    textBox_Location.Clear();
+                }                                                                                                          
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }                                   
+        }
+
+        //Delete Client Function
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connect.OpenMySqlConnection();
+
+                string editQuery = @"delete from client.client_info where ClientName='" + textBox_Name.Text + "'";
+                MySqlCommand command = new MySqlCommand(editQuery, connect.GetMySqlConnection());
+                command.ExecuteNonQuery();
+
+                connect.CloseMySqlConnection();
+
+                if (textBox_Name.Text.Trim().Equals("") || textBox_Surename.Text.Trim().Equals("") || textBox_Location.Text.Trim().Equals(""))
+                {
+                    MessageBox.Show("Ο πελάτης δεν υπάρχει.", "Κενά Στοιχεία", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else
+                {
+                    MessageBox.Show("Ο πελάτης διαγράφτηκε επιτυχώς!", "Διαγραφή Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                    textBox_Name.Clear();
+                    textBox_Surename.Clear();
+                    textBox_Location.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        //Update a Client
-        private void button_Update_Click(object sender, EventArgs e)
+        //Read the data
+        public void LoadData()
         {
-            String name = textBox_Name.Text;
-            String surename = textBox_Surename.Text;
-            String location = textBox_Location.Text;
-            String business = comboBox_Company.Text;
+            string name = textBox_Name.Text;
+            connect.OpenMySqlConnection();
+            MySqlCommand command = new MySqlCommand("select * from client.client_info", connect.GetMySqlConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
 
-            if (name.Trim().Equals("") || surename.Trim().Equals("") || location.Trim().Equals(""))
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            DataGridView_ClientList.Rows.Clear();
+            foreach (DataRow item in table.Rows)
             {
-                MessageBox.Show("Κάποια στοιχεία είναι άδεια!", "Κενά Στοιχεία", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                Boolean editClient = client.editClient(name, surename, location, business);
-
-                if (editClient)
-                {
-                    DataGridView_ClientList.DataSource = client.getClients();
-                    MessageBox.Show("Ο πελάτης ανανεώθηκε επιτυχώς!", "Ανανέωση Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Σφάλμα - Ο πελάτης δεν ανανεώθηκε!", "Ανανέωση Πελάτη", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                int n = DataGridView_ClientList.Rows.Add();
+                DataGridView_ClientList.Rows[n].Cells[0].Value = item["ClientName"].ToString();
+                DataGridView_ClientList.Rows[n].Cells[1].Value = item["ClientSurename"].ToString();
+                DataGridView_ClientList.Rows[n].Cells[2].Value = item["ClientLocation"].ToString();
+                DataGridView_ClientList.Rows[n].Cells[3].Value = item["Business"].ToString();
             }
         }
 
         //Display Selected Row to the text boxes.
         private void DataGridView_ClientList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox_Name.Text = DataGridView_ClientList.CurrentRow.Cells[0].Value.ToString();
-            textBox_Surename.Text = DataGridView_ClientList.CurrentRow.Cells[1].Value.ToString();
-            textBox_Location.Text = DataGridView_ClientList.CurrentRow.Cells[2].Value.ToString();
-            comboBox_Company.Text = DataGridView_ClientList.CurrentRow.Cells[3].Value.ToString();
-        }
+            try
+            {
+                textBox_Name.Text = DataGridView_ClientList.CurrentRow.Cells[0].Value.ToString();
+                textBox_Surename.Text = DataGridView_ClientList.CurrentRow.Cells[1].Value.ToString();
+                textBox_Location.Text = DataGridView_ClientList.CurrentRow.Cells[2].Value.ToString();
+                comboBox_Company.Text = DataGridView_ClientList.CurrentRow.Cells[3].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
+        }       
     }
 }

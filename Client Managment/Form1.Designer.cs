@@ -49,6 +49,10 @@
             this.button_Delete = new System.Windows.Forms.Button();
             this.textBox_Search = new System.Windows.Forms.TextBox();
             this.label_Search = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_ClientList)).BeginInit();
@@ -81,7 +85,7 @@
             this.panel1.Controls.Add(this.label_ClientManagmet);
             this.panel1.Location = new System.Drawing.Point(-6, -7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(842, 104);
+            this.panel1.Size = new System.Drawing.Size(951, 104);
             this.panel1.TabIndex = 2;
             // 
             // label_Name
@@ -216,9 +220,14 @@
             // DataGridView_ClientList
             // 
             this.DataGridView_ClientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_ClientList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.DataGridView_ClientList.Location = new System.Drawing.Point(2, 44);
             this.DataGridView_ClientList.Name = "DataGridView_ClientList";
-            this.DataGridView_ClientList.Size = new System.Drawing.Size(444, 404);
+            this.DataGridView_ClientList.Size = new System.Drawing.Size(445, 404);
             this.DataGridView_ClientList.TabIndex = 11;
             this.DataGridView_ClientList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_ClientList_CellClick);
             // 
@@ -231,13 +240,13 @@
             this.panel3.Controls.Add(this.DataGridView_ClientList);
             this.panel3.Location = new System.Drawing.Point(340, 103);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(451, 496);
+            this.panel3.Size = new System.Drawing.Size(449, 496);
             this.panel3.TabIndex = 12;
             // 
             // button_Exit
             // 
             this.button_Exit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Exit.Location = new System.Drawing.Point(303, 451);
+            this.button_Exit.Location = new System.Drawing.Point(302, 451);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(144, 42);
             this.button_Exit.TabIndex = 15;
@@ -253,6 +262,7 @@
             this.button_Delete.TabIndex = 14;
             this.button_Delete.Text = "Διαγραφή";
             this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // textBox_Search
             // 
@@ -272,11 +282,35 @@
             this.label_Search.TabIndex = 12;
             this.label_Search.Text = "Αναζήτηση:";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Όνομα";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Επίθετο";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Τοποθεσία";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Επιχείρηση";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // ClientManagment_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 619);
+            this.ClientSize = new System.Drawing.Size(792, 619);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -317,6 +351,10 @@
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.TextBox textBox_Search;
         private System.Windows.Forms.Label label_Search;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
 
