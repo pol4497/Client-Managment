@@ -183,7 +183,6 @@ namespace Client_Managment
         {
             try
             {
-                //string name = textBox_Name.Text;
                 connect.OpenMySqlConnection();
                 MySqlCommand command = new MySqlCommand("select * from client.client_info", connect.GetMySqlConnection());
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
