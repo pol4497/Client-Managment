@@ -44,15 +44,15 @@
             this.comboBox_Company = new System.Windows.Forms.ComboBox();
             this.button_Clear = new System.Windows.Forms.Button();
             this.DataGridView_ClientList = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_Exit = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.textBox_Search = new System.Windows.Forms.TextBox();
             this.label_Search = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_ClientList)).BeginInit();
@@ -231,12 +231,36 @@
             this.DataGridView_ClientList.TabIndex = 11;
             this.DataGridView_ClientList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_ClientList_CellClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Όνομα";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Επίθετο";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Τοποθεσία";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Επιχείρηση";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label_Search);
             this.panel3.Controls.Add(this.button_Exit);
             this.panel3.Controls.Add(this.button_Delete);
             this.panel3.Controls.Add(this.textBox_Search);
-            this.panel3.Controls.Add(this.label_Search);
             this.panel3.Controls.Add(this.DataGridView_ClientList);
             this.panel3.Location = new System.Drawing.Point(340, 103);
             this.panel3.Name = "panel3";
@@ -267,10 +291,11 @@
             // textBox_Search
             // 
             this.textBox_Search.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Search.Location = new System.Drawing.Point(94, 12);
+            this.textBox_Search.Location = new System.Drawing.Point(90, 12);
             this.textBox_Search.Name = "textBox_Search";
-            this.textBox_Search.Size = new System.Drawing.Size(353, 26);
+            this.textBox_Search.Size = new System.Drawing.Size(357, 26);
             this.textBox_Search.TabIndex = 13;
+            this.textBox_Search.TextChanged += new System.EventHandler(this.textBox_Search_TextChanged);
             // 
             // label_Search
             // 
@@ -279,32 +304,8 @@
             this.label_Search.Location = new System.Drawing.Point(3, 15);
             this.label_Search.Name = "label_Search";
             this.label_Search.Size = new System.Drawing.Size(85, 18);
-            this.label_Search.TabIndex = 12;
+            this.label_Search.TabIndex = 16;
             this.label_Search.Text = "Αναζήτηση:";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Όνομα";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Επίθετο";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Τοποθεσία";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Επιχείρηση";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // ClientManagment_Form
             // 
@@ -350,11 +351,11 @@
         private System.Windows.Forms.Button button_Exit;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.TextBox textBox_Search;
-        private System.Windows.Forms.Label label_Search;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label label_Search;
     }
 }
 
